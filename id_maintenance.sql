@@ -6,6 +6,7 @@ CREATE TABLE property_managements(
 id_pm INT PRIMARY KEY AUTO_INCREMENT,
 name VARCHAR(100) NOT NULL,
 address VARCHAR(100) NOT NULL,
+apartment VARCHAR(10),
 city VARCHAR(50) NOT NULL,
 state VARCHAR(20) NOT NULL,
 zip_code INT NOT NULL,
@@ -16,6 +17,7 @@ email VARCHAR(100) NOT NULL
 CREATE TABLE properties(
 id_property INT PRIMARY KEY AUTO_INCREMENT,
 address VARCHAR(100) NOT NULL,
+apartment VARCHAR(10),
 city VARCHAR(50) NOT NULL,
 state VARCHAR(20) NOT NULL,
 zip_code INT NOT NULL,
