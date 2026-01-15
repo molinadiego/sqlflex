@@ -69,7 +69,7 @@ id_work INT PRIMARY KEY AUTO_INCREMENT,
 id_wo INT NOT NULL,
 id_contractor INT NOT NULL,
 description VARCHAR(255) NOT NULL,
-price INT NOT NULL,
+price DECIMAL (10,2) NOT NULL,
 FOREIGN KEY (id_wo) REFERENCES work_orders(id_wo),
 FOREIGN KEY (id_contractor) REFERENCES contractors(id_contractor)
 );
@@ -77,10 +77,10 @@ FOREIGN KEY (id_contractor) REFERENCES contractors(id_contractor)
 
 CREATE TABLE invoices(
 id_invoice INT PRIMARY KEY AUTO_INCREMENT,
-id_wo INT NOT NULL,
+id_wo INT NOT NULL UNIQUE,
 date DATE NOT NULL,
-total_price INT NOT NULL,
-paid BINARY NOT NULL,
+total_price DECIMAL (10,2) NOT NULL,
+paid TINYINT (1) NOT NULL DEFAULT 0,
 FOREIGN KEY (id_wo) REFERENCES work_orders(id_wo)
 );
 
